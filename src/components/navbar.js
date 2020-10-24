@@ -3,17 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return(
-        <nav className="main-nav">
-            <ul className="menu-list">
-                <NavLink to="/submit" exact activeClassName="current-page-item">
-                    <li>SUBMISSION</li>
-                </NavLink>
-                <NavLink to="/who" activeClassName="">
-                    <li>WHO</li>
-                </NavLink>
-                <NavLink to="/socials" activeClassName="">
-                    <li>SOCIALS</li>
-                </NavLink>
+        <nav className="app-desktop-menu">
+            <ul className="menu">
+                <li><NavLink to="/submit" activeClassName="current-page-item">SUBMISSION</NavLink></li>
+                <li><NavLink to="/who" activeClassName="current-page-item">WHO</NavLink></li>
+                <li><NavLink to="/socials" activeClassName="current-page-item">SOCIALS</NavLink></li>
             </ul>
         </nav>
     )
