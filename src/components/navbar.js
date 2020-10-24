@@ -6,13 +6,13 @@ const Navbar = () => {
         <nav className="main-nav">
             <ul className="menu-list">
                 <NavLink to="/submit" exact activeClassName="current-page-item">
-                    <li>SUBMIT</li>
+                    <li>SUBMISSION</li>
                 </NavLink>
                 <NavLink to="/who" activeClassName="">
                     <li>WHO</li>
                 </NavLink>
                 <NavLink to="/socials" activeClassName="">
-                    <li>Socials</li>
+                    <li>SOCIALS</li>
                 </NavLink>
             </ul>
         </nav>
