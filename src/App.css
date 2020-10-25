@@ -23,10 +23,44 @@ body {
     text-rendering: optimizeLegibility;
   }
 .App{
-    display: flex;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+}
+
+.simplebar-scrollbar::before{
+    background: #00b7ff !important;
+    opacity: 1 !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+  
+
+.app-hero{
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+}
+
+.content{
+    padding: 0 15vw 0 15vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 50vh;
+    background: #efefef;
+    color: #2a2a2a;
 }
 
 .app-desktop-menu{
@@ -34,7 +68,7 @@ body {
     display: inline-flex;
     position: absolute;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .menu{
@@ -45,35 +79,48 @@ body {
 
 .menu li a{
     position: relative;
-    letter-spacing: .25em;
+    letter-spacing: .24em;
     margin: 0 1em;
     display: block;
     color: #eee;
     font-size: 1.1rem;
+    transition: color 0.1s cubic-bezier(.14,.8,.4,1);
+}
+
+.menu li a:active{
+    color: #bbbbbb;
 }
 
 .menu li a::before{
     content:"";
     position: absolute;
+    display: block;
     top: 104%;
-    width: 100%;
+    width: calc(100% - .12em);
     opacity: 0;
     height: 3px;
     transform: scaleX(0);
-    background: #00b7ff;
-    transition: all .2s cubic-bezier(0, 0.55, 0.45, 1);
+    transition: all .8s cubic-bezier(.14,.8,.4,1);
+    margin-right: -.26em;
+    background: #e80262;
 }
 
 .menu li a:hover::before{
+    position: absolute;
     transform: scaleX(1);
     opacity: 1;
+    background: #00b7ff;
+    box-shadow: 0 0 4px #00b7ff;
+    transition: all .2s cubic-bezier(.14,.8,.4,1);
 }
 
- li .current-page-item a::before{
+li .current-page-item::after{
     content:"";
     position: absolute;
-    top: 105%;
-    width: 80%;
+    display: block;
+    top: 104%;
+    width: calc(100% - .15em);
     height: 3px;
     background: #00b7ff;
+    box-shadow: 0 0 4px #00b7ff;
 }
