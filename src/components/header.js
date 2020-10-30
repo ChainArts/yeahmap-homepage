@@ -6,7 +6,10 @@ const Header = () => {
             <div className="header-cont">
                 <div className="row space-between">
                     <div className="col">
-                        <NavLink className="yeahmap-logo" to="/"><img src="yeahmap.png" alt=""/></NavLink>
+                        <div className="yeahmap-logo" ><NavLink to="/" activeClassName=""><img src="yeahmap.png" alt="Home"/></NavLink></div>
+                    </div>
+                    <div className="col menu">
+
                     </div>
                 </div>
             </div>

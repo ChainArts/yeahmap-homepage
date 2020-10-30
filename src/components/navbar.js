@@ -12,7 +12,6 @@ const NavMenu = {
             duration: 0.8
         }
     }
-
 }
 
 const Navbar = () => {
