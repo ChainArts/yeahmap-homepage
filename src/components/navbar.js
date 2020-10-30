@@ -17,7 +17,7 @@ const NavMenu = {
 const Navbar = () => {
     return(
         <motion.nav className="app-desktop-menu" variants = {NavMenu} initial="hidden" animate="open">
-            <ul className="menu">
+            <ul className="menu mobile-hide">
                 <li><NavLink to="/submit" activeClassName="current-page-item">SUBMISSION</NavLink></li>
                 <li><NavLink to="/who" activeClassName="current-page-item">WHO</NavLink></li>
                 <li><NavLink to="/socials" activeClassName="current-page-item">SOCIALS</NavLink></li>

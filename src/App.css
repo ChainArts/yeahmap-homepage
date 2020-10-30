@@ -38,7 +38,7 @@ header{
 }
 
 .header-cont{
-    margin: 1.2rem 10vw 1.2rem 10vw;
+    margin: 2rem 11vw 2rem 11vw;
 }
 
 .row{
@@ -48,20 +48,20 @@ header{
     flex-wrap: wrap;
 }
 
-.row .space-between{
+.space-between{
     justify-content: space-between;
 }
 
 .col{
     box-sizing: border-box;
-    margin: 15px;
+    margin: 1rem;
+    pointer-events: all;
 }
 
 .yeahmap-logo{
     display: block;
-    width: 240px;
+    width: 36px;
     cursor: pointer;
-    pointer-events: auto;
 }
 
 .yeahmap-logo img{
@@ -69,6 +69,66 @@ header{
     height: 100%;
 }
 
+.menu-toggle {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    transition-delay: 0s;
+  }
+
+.menu-toggle-icon {
+    width: 36px;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  
+.menu-toggle-icon .bar {
+    display: block;
+    width: 100%;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
+    height: 3px;
+    background: #fff;
+    transition: all .35s;
+    position: relative;
+    transform-origin: center;
+    transition: all 1s cubic-bezier(.14,.8,.4,1);
+  }
+
+.menu-toggle-icon:hover > .bar{
+    background: #00b7ff;
+    box-shadow: 0 0 16px #00b7ff85;
+    transition: all .2s cubic-bezier(.14,.8,.4,1); 
+}
+  
+.bar + .bar{
+    margin-top: 8px;
+  }
+.menu-toggle-open .bar:nth-child(1) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s top forwards;
+  }
+  
+.menu-toggle-closed .bar:nth-child(1) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s top-2 forwards;
+  }
+  
+.menu-toggle-open .bar:nth-child(2) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s scaled forwards;
+  }
+  
+.menu-toggle-closed .bar:nth-child(2) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s scaled-2 forwards;
+  }
+  
+.menu-toggle-open .bar:nth-child(3) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s bottom forwards;
+  }
+  
+.menu-toggle-closed .bar:nth-child(3) {
+    animation: cubic-bezier(.14,.8,.4,1) .35s bottom-2 forwards;
+  }
 .app-hero{
     position: relative;
     width: 100%;
@@ -101,7 +161,7 @@ header{
 .menu{
     display: inline-flex;
     text-align: center;
-    padding: 2rem 0 6px 0;
+    margin: 3rem 0 6px 0;
 }
 
 .menu li a{
@@ -150,4 +210,79 @@ li .current-page-item::after{
     height: 3px;
     background: #00b7ff;
     box-shadow: 0 0 4px #00b7ff;
+}
+
+@keyframes top {
+    0% {
+      top: 0;
+      transform: rotate(0);
+    }
+    100% {
+      top: 11px;
+      transform: rotate(45deg);
+    }
+  }
+  
+@keyframes top-2 {
+    0% {
+      top: 11px;
+      transform: rotate(45deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+  
+@keyframes bottom {
+    0% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 11px;
+      transform: rotate(-45deg);
+    }
+  }
+  
+@keyframes bottom-2 {
+    0% {
+      bottom: 11px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+  
+@keyframes scaled {
+    80% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+@keyframes scaled-2 {
+    0% {
+      transform: scale(0);
+    }
+    30% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+@media only screen and (max-width: 1280px) {
+    .mobile-hide {
+        display: none !important;
+    }
+    .mobile-maxWidth {
+        flex: 100 0;
+    }
+
 }
