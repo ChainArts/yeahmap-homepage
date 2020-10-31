@@ -28,7 +28,6 @@ body {
 }
 
 header{
-    z-index: 1000;
     display: block;
     position: fixed;
     top: 0;
@@ -100,7 +99,7 @@ header{
 .menu-toggle-icon:hover > .bar{
     background: #00b7ff;
     box-shadow: 0 0 16px #00b7ff85;
-    transition: all .2s cubic-bezier(.14,.8,.4,1); 
+    transition: all .1s cubic-bezier(.14,.8,.4,1); 
 }
   
 .bar + .bar{
