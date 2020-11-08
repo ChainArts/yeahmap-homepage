@@ -25,9 +25,11 @@ body {
 .App{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 header{
+    z-index: 2;
     display: block;
     position: fixed;
     top: 0;
@@ -114,10 +116,12 @@ header{
   }
   
 .menu-toggle-open .bar:nth-child(2) {
+    transform-origin: right;
     animation: cubic-bezier(.14,.8,.4,1) .35s scaled forwards;
   }
   
 .menu-toggle-closed .bar:nth-child(2) {
+    transform-origin: left;
     animation: cubic-bezier(.14,.8,.4,1) .35s scaled-2 forwards;
   }
   
@@ -128,6 +132,7 @@ header{
 .menu-toggle-closed .bar:nth-child(3) {
     animation: cubic-bezier(.14,.8,.4,1) .35s bottom-2 forwards;
   }
+
 .app-hero{
     position: relative;
     width: 100%;
@@ -144,9 +149,9 @@ header{
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 50vh;
-    background: #efefef;
-    color: #2a2a2a;
+    height: 100vh;
+    /*background: #efefef;
+    color: #2a2a2a;*/
 }
 
 .app-desktop-menu{
@@ -257,10 +262,10 @@ li .current-page-item::after{
   
 @keyframes scaled {
     80% {
-      transform: scale(0);
+      transform: scaleX(0);
     }
     100% {
-      transform: scale(0);
+      transform: scaleX(0);
     }
   }
   
