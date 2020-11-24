@@ -70,6 +70,27 @@ header{
     height: 100%;
 }
 
+.hamburger-menu{
+    z-index: 101;
+    opacity: 0;
+    transform: translateX(50px) scaleX(0) !important;
+    transition: all .5s cubic-bezier(.14,.8,.4,1);
+}
+
+.menu-overlay{
+    z-index: 100;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    -webkit-box-align: center;
+    background: #2a2d32;
+    bottom:0;
+    right: 0;
+    left:0;
+    height: 100vh !important;
+    width: 100vw !important;
+}
+
 .menu-toggle {
     display: flex;
     opacity: 1;
@@ -150,8 +171,6 @@ header{
     align-items: center;
     width: 100%;
     height: 100vh;
-    /*background: #efefef;
-    color: #2a2a2a;*/
 }
 
 .app-desktop-menu{
@@ -160,6 +179,7 @@ header{
     position: absolute;
     justify-content: center;
     width: 100%;
+    transition: all .2s cubic-bezier(.14,.8,.4,1);
 }
 
 .menu{
@@ -282,8 +302,15 @@ li .current-page-item::after{
   }
 
 @media only screen and (max-width: 1280px) {
+    .desktop-hide {
+        opacity: 1 !important;
+        transform: translateX(0) scaleX(1) !important;
+        transition: all .5s cubic-bezier(.14,.8,.4,1);
+    }
     .mobile-hide {
-        display: none !important;
+        opacity: 0 !important;
+        transform: translateY(-50px) !important;
+        transition: all .5s cubic-bezier(.14,.8,.4,1);
     }
     .mobile-maxWidth {
         flex: 100 0;
