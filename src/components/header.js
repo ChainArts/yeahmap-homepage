@@ -23,6 +23,7 @@ const navOverlay = {
 }
     const [isOpen, setIsOpen] = useState(false)
     return(
+        <>
         <header>
             <div className="header-cont">
                 <div className="row space-between">
@@ -36,22 +37,20 @@ const navOverlay = {
                                 <div className="bar"></div>
                                 <div className="bar"></div>
                             </div>
-                            <AnimatePresence exitBeforeEnter>
-                            {isOpen && (
-                            <motion.div className="menu-overlay" variants = {navOverlay} initial="hidden" animate = "open" exit="exit">
-                                <div className="menu-overlay-container">
-
-
-                                </div>
-                            </motion.div>
-                            )}
-
-                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+          <AnimatePresence exitBeforeEnter>
+          {isOpen && (
+            <motion.div className="menu-overlay" variants = {navOverlay} initial="hidden" animate = "open" exit="exit">
+                <div className="menu-overlay-container">
+                </div>
+            </motion.div>
+          )}
+          </AnimatePresence>
+          </>
     )
 }
 
